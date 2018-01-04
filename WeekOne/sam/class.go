@@ -2,61 +2,80 @@ package main
 
 import "fmt"
 
-// Half - Used to construct a basketball half
+type Team struct {
+	mascot string
+	school string
+}
+
 type Half struct {
-	// 3a - We Construct a struct for our halves
-	score  int
-	steals int
-	blocks int
+	Points  int
+	Steals  int
+	Blocks  int
+	Fouls   int
+	Assists int
 }
 
-// Game - Used to construct a basketball game
+type Home struct {
+	Team       Team
+	firstHalf  Half
+	secondHalf Half
+}
+type Away struct {
+	Team       Team
+	firstHalf  Half
+	secondHalf Half
+}
 type Game struct {
-	// 3b We construct a game using our predefined Half Struct, we can simply place it into the game as needed.
-	// We could also deconstruct this into a team struct if we wanted to, but let's just use this for now.
-	Home struct {
-		name       string
-		firstHalf  Half
-		secondHalf Half
-	}
-	Away struct {
-		name       string
-		firstHalf  Half
-		secondHalf Half
-	}
+	Home Home
+	Away Away
 }
 
-// main - prints a simple golang
+type
+
 func main() {
-	//Construct the game
-	c := &Game{
-		Home: {
-			name: "Jayhawks",
-			firstHalf: {
-				score:  30,
-				steals: 8,
-				blocks: 1,
+
+	coverage := Game{
+		Home: Home{
+			Team: Team{
+				school: "Kansas University",
+				mascot: "Jayhawks",
 			},
-			secondHalf: {
-				score:  30,
-				steals: 3,
-				blocks: 5,
+			firstHalf: Half{
+				Points:  52,
+				Steals:  2,
+				Blocks:  4,
+				Fouls:   3,
+				Assists: 5,
+			},
+			secondHalf: Half{
+				Points:  30,
+				Steals:  3,
+				Blocks:  7,
+				Fouls:   2,
+				Assists: 10,
 			},
 		},
-		Away{
-			name: "Jayhawks",
-			firstHalf: {
-				score:  30,
-				steals: 8,
-				blocks: 1,
+		Away: Away{
+			Team: Team{
+				school: "Stanford",
+				mascot: "Sequoias",
 			},
-			secondHalf: {
-				score:  39,
-				steals: 2,
-				blocks: 1,
+			firstHalf: Half{
+				Points:  45,
+				Steals:  2,
+				Blocks:  4,
+				Fouls:   3,
+				Assists: 5,
+			},
+			secondHalf: Half{
+				Points:  30,
+				Steals:  3,
+				Blocks:  7,
+				Fouls:   2,
+				Assists: 10,
 			},
 		},
 	}
-	// Let's print a game
-	fmt.Println("hello")
+
+	fmt.Println(coverage)
 }
