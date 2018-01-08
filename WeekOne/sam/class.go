@@ -1,81 +1,48 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
+// I - is our example interface
+type I interface {
+	M() string
+}
+
+// Team - struct to declare our team's data
 type Team struct {
 	mascot string
 	school string
 }
 
-type Half struct {
-	Points  int
-	Steals  int
-	Blocks  int
-	Fouls   int
-	Assists int
+type T struct {
+	name     string
+	venue    string
+	homeTeam Team
+	awayTeam Team
 }
 
-type Home struct {
-	Team       Team
-	firstHalf  Half
-	secondHalf Half
-}
-type Away struct {
-	Team       Team
-	firstHalf  Half
-	secondHalf Half
-}
-type Game struct {
-	Home Home
-	Away Away
+func (t T) M() string {
+	return t.name
 }
 
-type
+func Announce(i I) {
+	fmt.Printf("Todays Game is %s\n", i.M())
+}
 
 func main() {
 
-	coverage := Game{
-		Home: Home{
-			Team: Team{
-				school: "Kansas University",
-				mascot: "Jayhawks",
-			},
-			firstHalf: Half{
-				Points:  52,
-				Steals:  2,
-				Blocks:  4,
-				Fouls:   3,
-				Assists: 5,
-			},
-			secondHalf: Half{
-				Points:  30,
-				Steals:  3,
-				Blocks:  7,
-				Fouls:   2,
-				Assists: 10,
-			},
+	gameData := T{
+		name: "Kansas Vs. Syracuse",
+		awayTeam: Team{
+			school: "Kansas",
+			mascot: "Jayhawks",
 		},
-		Away: Away{
-			Team: Team{
-				school: "Stanford",
-				mascot: "Sequoias",
-			},
-			firstHalf: Half{
-				Points:  45,
-				Steals:  2,
-				Blocks:  4,
-				Fouls:   3,
-				Assists: 5,
-			},
-			secondHalf: Half{
-				Points:  30,
-				Steals:  3,
-				Blocks:  7,
-				Fouls:   2,
-				Assists: 10,
-			},
+		homeTeam: Team{
+			school: "Syracuse",
+			mascot: "Orangemen",
 		},
 	}
 
-	fmt.Println(coverage)
+	Announce(gameData)
 }

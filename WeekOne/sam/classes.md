@@ -26,4 +26,8 @@ You can use a lot of [Method Definitions](https://developer.mozilla.org/en-US/do
 * *Getters* - Sometimes it doesn't make sense to bind a function, then use the function.  Use a getter to bind a function to a value.
 
 ## GoLang Classes
-Alright, so classes arrrren't really a thing in GoLang, because it's strictly type though we can do a lot with this language to maneuver what we want our data to do.  In our third section of code we are going to go through setting up our data structure properly to achieve all of the things that we did with javascript
+Alright, so classes arrrren't really a thing in GoLang, because it's strictly type though we can do a lot with this language to maneuver what we want our data to do.  In our third section of code we are going to go through setting up our data structure properly to achieve all of the things that we did with javascript.
+
+In a way we can utilize the same style of programming from classes by using GoLang's [interfaces](https://tour.golang.org/methods/10).  Think of interfaces as simply a way to attach a class of functions to an object.  In our case we want to attach an interface that runs statistical information to our game data.
+
+One thing I really enjoy about newer code editors and GoLang is their insistence on notating what we're doing in regards to structs.  As I am not fully advanced in GoLang I have used a simple example of how to implement an interface, but I do hope to work more on this in the future!
