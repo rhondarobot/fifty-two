@@ -25,7 +25,7 @@ I decided to use a ternary function to pull this off because we were only compar
 I tested my function like this:
 ```
 const testing = specialMultiply(4);
-   testing(5); // 20
+testing(5); // 20
 ```
 &&
 ```
@@ -38,19 +38,21 @@ The guessing game was a little trickier. Challenge: create a guessingGame that t
 Give clues in the inner function as to whether the guess is too high, too low or matches the randomly generated answer (*defined in the outer function*). You should also stop the user from guessing if the amount of guesses they made is greater than the initial amount passed to the outer function. (Closure needed to solve this problem)
 
 2 things I learned while *creating this game* were:
+    
     1. `Math.floor()` *must* envelop `Math.random()` and not the other way around. I had it backwards and the numbers were still ranging from 0 - 1.
+    
     2. The `guesses` counter was inside the `if statement` of the inner function and it would immediately return 'You are all done playing!' everytime.  I realized that in my code, I was counting too late and that my `guesses` count was always at zero, thus skipping the first `if statement` and going straight to the default string that wouldn't allow me to proceed in the game regardless of how many guesses I had set for myself.
 
 How I tested my guessing game: 
 ```
 const game1 = guessingGame(5); // where `5` would determine # of guesses
-                                  // before being told 'You are all done 
-                                  //playing!' 
-   game1(4); // Your guess in too high!
-   game1(0); // Your guess is too low!
-   game1(3); // Your guess is too high!
-   game1(2); // You got it!
-   game1(1); // You are done playing!
+                               // before being told 'You are all done 
+                               //playing!' 
+game1(4); // Your guess in too high!
+game1(0); // Your guess is too low!
+game1(3); // Your guess is too high!
+game1(2); // You got it!
+game1(1); // You are done playing!
 ```
 
 ^ I did that multiple times to test it and it worked with no issues. 
