@@ -13,9 +13,9 @@ It contains another inner function that performs a `join` method on its array th
 
 ******
 
-The 2nd example is showing a loop using let vs var.  If you use var for your loop and timeout function, you will receive unexpected results: the number 6 will print out 5 times at the interval of 1 second.
+The 2nd example is showing a loop using `let` vs `var`.  If you use `var` for your loop and timeout function, you will receive unexpected results: the number `6` will print out 5 times at the interval of 1 second.
 
-Using let creates its own closure and prints out 0 - 4 at 1 second intervals, just like you thought it would when you used var instead of let.
+Using `let` creates its own closure and prints out 0 - 4 at 1 second intervals, just like you thought it would when you used `var` (before knowing of the powers of `let`).
 
 ### multiply.js
 This was a challenge to create a function named specialMultiply that takes in 2 parameters and returns their product. If only one parameter was passed through, create an inner function to pass the other parameter through and return the product via that function instead. 
@@ -47,7 +47,7 @@ How I tested my guessing game:
 ```
 const game1 = guessingGame(5); // where `5` would determine # of guesses
                                // before being told 'You are all done 
-                               //playing!' 
+                               // playing!' 
 game1(4); // Your guess in too high!
 game1(0); // Your guess is too low!
 game1(3); // Your guess is too high!
