@@ -23,11 +23,13 @@ This was a challenge to create a function named specialMultiply that takes in 2 
 I decided to use a ternary function to pull this off because we were only comparing two conditions. It's best practice to name your inner function for debugging purposes, but I didn't feel the need to in this case.
 
 I tested my function like this:
-```const testing = specialMultiply(4);
+```
+const testing = specialMultiply(4);
    testing(5); // 20
 ```
 &&
-```const bothParameters = specialMultiply(6,4); // 24
+```
+const bothParameters = specialMultiply(6,4); // 24
 ```
 
 ### guessingGame.js
@@ -40,7 +42,8 @@ Give clues in the inner function as to whether the guess is too high, too low or
     2. The `guesses` counter was inside the `if statement` of the inner function and it would immediately return 'You are all done playing!' everytime.  I realized that in my code, I was counting too late and that my `guesses` count was always at zero, thus skipping the first `if statement` and going straight to the default string that wouldn't allow me to proceed in the game regardless of how many guesses I had set for myself.
 
 How I tested my guessing game: 
-```const game1 = guessingGame(5); // where `5` would determine # of guesses
+```
+const game1 = guessingGame(5); // where `5` would determine # of guesses
                                   // before being told 'You are all done 
                                   //playing!' 
    game1(4); // Your guess in too high!
