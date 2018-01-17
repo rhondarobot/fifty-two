@@ -1,5 +1,5 @@
 function guessingGame(numberOfGuesses){
-    let answer = Math.floor(Math.random() * 10);
+    const answer = Math.floor(Math.random() * 10);
     let guesses = 0;
     return function(guess) {
         guesses++;

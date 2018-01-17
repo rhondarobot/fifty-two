@@ -18,7 +18,7 @@ The 2nd example is showing a loop using `let` vs `var`.  If you use `var` for yo
 Using `let` creates its own closure and prints out 0 - 4 at 1 second intervals, just like you thought it would when you used `var` (before knowing of the powers of `let`).
 
 ### multiply.js
-This was a challenge to create a function named specialMultiply that takes in 2 parameters and returns their product. If only one parameter was passed through, create an inner function to pass the other parameter through and return the product via that function instead. 
+This was a challenge to create a function named `specialMultiply` that takes in 2 parameters and returns their product. If only one parameter was passed through, create an inner function to pass the other parameter through and return the product via that function instead. 
 
 I decided to use a ternary function to pull this off because we were only comparing two conditions. It's best practice to name your inner function for debugging purposes, but I didn't feel the need to in this case.
 
@@ -29,7 +29,7 @@ testing(5); // 20
 ```
 &&
 ```
-const bothParameters = specialMultiply(6,4); // 24
+specialMultiply(6,4); // 24
 ```
 
 ### guessingGame.js
@@ -39,17 +39,19 @@ Give clues in the inner function as to whether the guess is too high, too low or
 
 2 things I learned while *creating this game* were:
     
-    1. `Math.floor()` *must* envelop `Math.random()` and not the other way around. I had it backwards and the numbers were still ranging from 0 - 1.
+1. `Math.floor()` *must* envelop `Math.random()` and not the other way around. I had it backwards and the numbers were still ranging from 0 - 1.
     
-    2. The `guesses` counter was inside the `if statement` of the inner function and it would immediately return 'You are all done playing!' everytime.  I realized that in my code, I was counting too late and that my `guesses` count was always at zero, thus skipping the first `if statement` and going straight to the default string that wouldn't allow me to proceed in the game regardless of how many guesses I had set for myself.
+2. The `guesses` counter was inside the `if statement` of the inner function and it would immediately return 'You are all done playing!' everytime.  I realized that in my code, I was counting too late and that my `guesses` count was always at zero, thus skipping the first `if statement` and going straight to the default string that wouldn't allow me to proceed in the game regardless of how many guesses I had set for myself.
+
+*. Using `const` for the random number instead of `let` because the random number will be unchanged for the given instance.
 
 How I tested my guessing game: 
 ```
 const game1 = guessingGame(5); // where `5` would determine # of guesses
                                // before being told 'You are all done 
                                // playing!' 
-game1(4); // Your guess in too high!
-game1(0); // Your guess is too low!
+game1(4); // Your guess is too high! // where the number in parenthesis is the 
+game1(0); // Your guess is too low!  // user's guess
 game1(3); // Your guess is too high!
 game1(2); // You got it!
 game1(1); // You are done playing!
