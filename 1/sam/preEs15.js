@@ -33,7 +33,7 @@ var away = {
   }
 }
 
-const newGame = new BallGame(home, away);
+var newGame = new BallGame(home, away);
 
 // 1A Result
 console.log('newGame', newGame);
